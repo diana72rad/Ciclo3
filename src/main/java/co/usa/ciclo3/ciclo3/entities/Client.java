@@ -25,9 +25,9 @@ public class Client implements Serializable{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer idClient;
-    private String name;
     private String email;
     private String password;
+    private String name;
     private Integer age;
     
     
@@ -39,22 +39,6 @@ public class Client implements Serializable{
     @JsonIgnoreProperties({"category","messages"})
     private List<Reservation> reservations;
 
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
-    }
-
-    public List<Reservation> getReservations() {
-        return reservations;
-    }
-
-    public void setReservations(List<Reservation> reservations) {
-        this.reservations = reservations;
-    }
-
     public Integer getIdClient() {
         return idClient;
     }
@@ -63,13 +47,6 @@ public class Client implements Serializable{
         this.idClient = idClient;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
     public String getEmail() {
         return email;
     }
@@ -86,7 +63,13 @@ public class Client implements Serializable{
         this.password = password;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Integer getAge() {
         return age;
@@ -94,5 +77,21 @@ public class Client implements Serializable{
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+    
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }
