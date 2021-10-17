@@ -18,6 +18,7 @@ import javax.persistence.Table;
 /**
  *
  * @author diana
+ * october 2021
  */
 @Entity
 @Table (name="client")
