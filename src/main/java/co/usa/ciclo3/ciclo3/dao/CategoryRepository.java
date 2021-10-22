@@ -29,5 +29,9 @@ public List<Category> getAll() {return (List<Category>) categoryCrudRepository.f
      public Category save(Category category) { 
          return categoryCrudRepository.save(category);
      };
+     
+    public void delete(Category category ) {
+        categoryCrudRepository.delete(category);
+    };
     
 }

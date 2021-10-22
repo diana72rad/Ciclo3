@@ -26,8 +26,12 @@ public class ReservationRepository {
         return reservationCrudRepository.findById(id);
     };
     
-     public Reservation save(Reservation reservation) { 
+    public Reservation save(Reservation reservation) { 
          return reservationCrudRepository.save(reservation);
      };
+     
+    public void delete(Reservation reservation) {
+        reservationCrudRepository.delete(reservation);
+    };
     
 }

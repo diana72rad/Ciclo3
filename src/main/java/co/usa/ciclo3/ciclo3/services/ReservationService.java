@@ -46,4 +46,32 @@ public class ReservationService {
  
     }
     
+    public Reservation update(Reservation reservation){
+        if(reservation.getIdReservation()!=null){
+            Optional<Reservation>g=reservationRepository.getReservation(reservation.getIdReservation());
+            if(!g.isEmpty()){
+                if(reservation.getStartDate()!=null){
+                    g.get().setStartDate(reservation.getStartDate());
+                }
+                if(reservation.getDevolutionDate()!=null){
+                    g.get().setDevolutionDate(reservation.getStartDate());
+                }
+                return reservationRepository.save(g.get());
+
+            }
+        }
+        return reservation;
+
+    }
+
+    public boolean deleteReservation(int id){
+        Optional<Reservation> reservation=getReservation(id);
+        if(!reservation.isEmpty()){
+            reservationRepository.delete(reservation.get());
+            return true;
+        }
+        return false;
+
+    }
+    
 }

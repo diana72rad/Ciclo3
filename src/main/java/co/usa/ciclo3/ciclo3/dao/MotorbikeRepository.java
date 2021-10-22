@@ -27,8 +27,11 @@ public class MotorbikeRepository {
         return motorbikeCrudRepository.findById(id);
     };
     
-     public Motorbike save(Motorbike motorbike) { 
+    public Motorbike save(Motorbike motorbike) { 
          return motorbikeCrudRepository.save(motorbike);
      };
     
+    public void delete(Motorbike motorbike) {
+        motorbikeCrudRepository.delete(motorbike);
+    };
 }
