@@ -16,18 +16,35 @@ import org.springframework.stereotype.Service;
  * @author diana
  */
 @Service
+
+ /**
+ *
+ * Clase para manejar los servicios relacionados a las reservaciones
+ */
 public class ReservationService {
     @Autowired
     ReservationRepository reservationRepository;
-    
+
+ /**
+ *
+ * Método para obtener una lista de las reservaciones
+ */    
     public List<Reservation> getAll() {
         return (List<Reservation>) reservationRepository.getAll();
      }
-    
+
+/**
+ *
+ * Método para obtener una reservación
+ */
     public Optional<Reservation> getReservation(int id) {
         return reservationRepository.getReservation(id);
     }
-    
+
+ /**
+ *
+ * Método para registrar las reservaciones
+ */
     public Reservation save(Reservation reservation) { 
        if (reservation.getIdReservation()== null){
            return reservationRepository.save(reservation);
@@ -46,6 +63,10 @@ public class ReservationService {
  
     }
     
+ /**
+ *
+ * Método para actualizar las reservaciones
+ */
     public Reservation update(Reservation reservation){
         if(reservation.getIdReservation()!=null){
             Optional<Reservation>g=reservationRepository.getReservation(reservation.getIdReservation());
@@ -64,6 +85,10 @@ public class ReservationService {
 
     }
 
+ /**
+ *
+ * Método para borrar las reservaciones
+ */
     public boolean deleteReservation(int id){
         Optional<Reservation> reservation=getReservation(id);
         if(!reservation.isEmpty()){
