@@ -1,9 +1,7 @@
 package co.usa.ciclo3.ciclo3;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
         
@@ -23,10 +21,12 @@ public static void main2(String[] args) {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/Category/all").allowedOrigins("http://129.151.123.218/");
-                                registry.addMapping("/Category/save").allowedOrigins("http://129.151.123.218/");
-				registry.addMapping("/Client/all").allowedOrigins("http://129.151.123.218/");
-                                registry.addMapping("/Client/save").allowedOrigins("http://129.151.123.218/");
+				registry.addMapping("/Category/all").allowedOrigins("http://129.151.123.218:8080/");
+                                registry.addMapping("/Category/save").allowedOrigins("http://129.151.123.218:8080/");
+				registry.addMapping("/Client/all").allowedOrigins("http://129.151.123.218:8080/");
+                                registry.addMapping("/Client/save").allowedOrigins("http://129.151.123.218:8080/");
+                                registry.addMapping("/Motorbike/save").allowedOrigins("http://129.151.123.218:8080/");
+                                registry.addMapping("/Motorbike/all").allowedOrigins("http://129.151.123.218:8080/");
 			}
 		};
 	}
