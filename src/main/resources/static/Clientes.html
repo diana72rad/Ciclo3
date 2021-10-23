@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="application/json" >
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clientes</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/misFuncionesCliente.js"></script>
+	<h1>CLIENTES</h1>
+	<p>
+	<div id="resultado"></div>
+	</p>
+   <input type ="button" onclick="traerInformacion()" title="Consultar" value="Consultar">
+   <p>
+    <div>
+       <input type="number" id="id" placeholder="id">&nbsp; 
+       <input type="text" id="email" placeholder="email">&nbsp; 
+       <input type="text" id="password" placeholder="password">&nbsp; 
+       <input type="text" id="name" placeholder="name">&nbsp; 
+       <input type="number" id="age" placeholder="age">&nbsp; 
+   </div>
+   </p>
+   <button onclick="guardarInformacion()">Guardar</button>&nbsp; 
+   <button onclick="actualizarInformacion()">Actualizar</button>
+   <p>
+        <li>
+        <a href="Index.html"><i class="fa fa-dashboard"></i><span>Inicio</span></a>
+      </li>
+	</p>
+</body>
+</html>
